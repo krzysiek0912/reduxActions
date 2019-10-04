@@ -32,9 +32,9 @@ function commentsReducer(state = initialState, action) {
       state = {
         ...state,
         comments: state.comments.map(comment => {
-          if (comment.id === action.id) {
-            comment.text = action.text;
-          }
+          if (comment.id === action.id) comment.text = action.text;
+
+          return comment;
         })
       };
       break;
@@ -43,9 +43,9 @@ function commentsReducer(state = initialState, action) {
       state = {
         ...state,
         comments: state.comments.map(comment => {
-          if (comment.id === action.id) {
-            comment.vote += 1;
-          }
+          if (comment.id === action.id) comment.vote += 1;
+
+          return comment;
         })
       };
       break;
@@ -54,9 +54,9 @@ function commentsReducer(state = initialState, action) {
       state = {
         ...state,
         comments: state.comments.map(comment => {
-          if (comment.id === action.id) {
-            comment.vote -= 1;
-          }
+          if (comment.id === action.id) comment.vote -= 1;
+
+          return comment;
         })
       };
       break;
